@@ -205,7 +205,7 @@ color: white;
       const email = document.getElementById('email').value;
       const phone = document.getElementById('phone').value;
 
-      const res = await fetch(`http://localhost:3000/api/user/${userId}`, {
+      const res = await fetch(`https://doctor-backend-1hbs.onrender.com/api/user/${userId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, phone })

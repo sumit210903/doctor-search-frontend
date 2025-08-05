@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Account</title>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     :root {
       --primary-color: #006c59;
@@ -17,7 +18,7 @@
       padding: 0;
     }
 
-       .navbar {
+    .navbar {
       background-color: #00856F;
       padding: 1rem 2rem;
       display: flex;
@@ -26,9 +27,10 @@
       flex-wrap: wrap;
     }
 
-    .navbar a{
-text-decoration: none;
+    .navbar a {
+      text-decoration: none;
     }
+
     .navbar .logo {
       font-size: 1.5rem;
       font-weight: bold;
@@ -134,18 +136,39 @@ text-decoration: none;
 
     /* ANIMATIONS */
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.98); }
-      to { opacity: 1; transform: scale(1); }
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     /* RESPONSIVE */
@@ -167,52 +190,55 @@ text-decoration: none;
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
-<nav class="navbar">
-  <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a>
-  <ul class="nav-links">
+  <nav class="navbar">
+    <a href="index.html">
+      <div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div>
+    </a>
+    <ul class="nav-links">
 
-    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
-        <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
-        <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
-        <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+          <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+          <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+          <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
-        <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
-        <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+          <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+          <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-        <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
-        <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
-        <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
   <!-- ACCOUNT INFO -->
   <div class="container">
@@ -244,4 +270,5 @@ text-decoration: none;
     loadUser();
   </script>
 </body>
+
 </html>

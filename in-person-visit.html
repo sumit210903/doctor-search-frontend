@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>In-Person Visit - CareRadar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,9 +21,11 @@
       align-items: center;
       flex-wrap: wrap;
     }
-.navbar a{
-  text-decoration: none;
-}
+
+    .navbar a {
+      text-decoration: none;
+    }
+
     .navbar .logo {
       font-size: 1.5rem;
       font-weight: bold;
@@ -89,7 +92,7 @@
       background-color: white;
       border-radius: 10px;
       margin-top: 2em;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
       animation: fadeInUp 0.8s ease-in-out;
     }
 
@@ -117,6 +120,7 @@
         transform: translateY(30px);
         opacity: 0;
       }
+
       to {
         transform: translateY(0);
         opacity: 1;
@@ -138,82 +142,88 @@
     }
   </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a>
-  <ul class="nav-links">
-    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">
+      <div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
-        <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
-        <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
-        <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+          <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+          <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+          <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
-        <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
-        <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+          <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+          <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-        <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
-        <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+        </ul>
+      </li>
 
-    <li class="dropdown">
-      <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
-        <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 
-<!-- Main Content -->
-<section class="main">
-  <h1>In-Person Visit</h1>
-  <p>
-    CareRadar offers convenient and hassle-free in-person doctor appointments. Whether you prefer a face-to-face consultation or require physical examinations, we ensure a seamless booking experience.
-  </p>
+  <!-- Main Content -->
+  <section class="main">
+    <h1>In-Person Visit</h1>
+    <p>
+      CareRadar offers convenient and hassle-free in-person doctor appointments. Whether you prefer a face-to-face
+      consultation or require physical examinations, we ensure a seamless booking experience.
+    </p>
 
-  <p>
-    With verified hospitals and clinics across the region, you can choose the best specialist near you. Simply book an appointment online and walk in at your scheduled time without the wait.
-  </p>
+    <p>
+      With verified hospitals and clinics across the region, you can choose the best specialist near you. Simply book an
+      appointment online and walk in at your scheduled time without the wait.
+    </p>
 
-  <p>
-    <strong>Key Benefits:</strong>
+    <p>
+      <strong>Key Benefits:</strong>
     <ul>
       <li>Choose from top-rated clinics and hospitals</li>
       <li>Check real-time availability</li>
       <li>Easy appointment rescheduling</li>
       <li>Detailed directions and facility overview</li>
     </ul>
-  </p>
+    </p>
 
-  <p>
-    We are committed to your health and comfort. Let us take care of the logistics while you focus on getting better.
-  </p>
-</section>
+    <p>
+      We are committed to your health and comfort. Let us take care of the logistics while you focus on getting better.
+    </p>
+  </section>
 
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 CareRadar. All rights reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CareRadar. All rights reserved.</p>
+  </footer>
 
 </body>
+
 </html>

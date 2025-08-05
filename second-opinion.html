@@ -1,25 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Second Opinion</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: #f9f9f9;
     }
-      .navbar {
+
+    .navbar {
       background-color: #006c59;
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom:50px ;
-   }
+      margin-bottom: 50px;
+    }
 
     .navbar .logo {
       font-size: 1.5rem;
@@ -100,7 +102,7 @@
       background: white;
       border-radius: 10px;
       padding: 2rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       animation: slideUp 1s ease;
     }
 
@@ -123,17 +125,31 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 768px) {
-       .navbar {
+      .navbar {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -148,10 +164,13 @@
     }
   </style>
 </head>
+
 <body>
 
- <nav class="navbar">
-    <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a> 
+  <nav class="navbar">
+    <a href="index.html">
+      <div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div>
+    </a>
     <ul class="nav-links">
       <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
 
@@ -194,22 +213,24 @@
     </ul>
   </nav>
 
-<header>
-  <h1>Get a Second Opinion</h1>
-  <p>Have doubts about a diagnosis? Get another expert opinion to be sure.</p>
-</header>
+  <header>
+    <h1>Get a Second Opinion</h1>
+    <p>Have doubts about a diagnosis? Get another expert opinion to be sure.</p>
+  </header>
 
-<section class="content">
-  <div class="box">
-    <h2>Why Seek a Second Opinion?</h2>
-    <p>
-      Sometimes, getting an additional perspective can give you peace of mind or even uncover better treatment options. Our panel of experienced doctors are here to review your reports and provide insights.
-    </p>
-    <p><strong>Available:</strong> All specialties</p>
-    <p><strong>Report Review Fee:</strong> ₹500</p>
-    <a href="book-appointments.html">Get a Second Opinion</a>
-  </div>
-</section>
+  <section class="content">
+    <div class="box">
+      <h2>Why Seek a Second Opinion?</h2>
+      <p>
+        Sometimes, getting an additional perspective can give you peace of mind or even uncover better treatment
+        options. Our panel of experienced doctors are here to review your reports and provide insights.
+      </p>
+      <p><strong>Available:</strong> All specialties</p>
+      <p><strong>Report Review Fee:</strong> ₹500</p>
+      <a href="book-appointments.html">Get a Second Opinion</a>
+    </div>
+  </section>
 
 </body>
+
 </html>

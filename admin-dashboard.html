@@ -151,7 +151,7 @@
   <script>
     // Load appointments from backend API
     window.onload = () => {
-      fetch('https://yourbackend.com/api/admin-dashboard') // Replace with real backend URL
+      fetch('https://doctor-backend-1hbs.onrender.com/api/admin-dashboard') // Replace with real backend URL
         .then(res => res.json())
         .then(data => {
           const table = document.getElementById('appointmentTable').querySelector('tbody');
