@@ -12,7 +12,6 @@
       background: #f5f5f5;
     }
 
-    /* Navbar Styles */
     .navbar {
       background-color: #006c59;
       padding: 1rem 2rem;
@@ -106,7 +105,6 @@
       }
     }
 
-    /* Login Form */
     .login-container {
       max-width: 400px;
       margin: 80px auto;
@@ -116,9 +114,11 @@
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       animation: slideIn 0.6s ease;
     }
-.navbar a{
-  text-decoration: none;
-}
+
+    .navbar a {
+      text-decoration: none;
+    }
+
     .login-container h2 {
       text-align: center;
       color: #006c59;
@@ -179,7 +179,6 @@
     <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a>
     <ul class="nav-links">
       <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-
       <li class="dropdown">
         <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
         <ul class="dropdown-menu">
@@ -187,7 +186,6 @@
           <li><a href="book-appointments.html">Book Appointment</a></li>
         </ul>
       </li>
-
       <li class="dropdown">
         <a href="#"><i class="fas fa-book-medical"></i> Services ▾</a>
         <ul class="dropdown-menu">
@@ -195,7 +193,6 @@
           <li><a href="in-person-visit.html">In-Person Visit</a></li>
         </ul>
       </li>
-
       <li class="dropdown">
         <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
         <ul class="dropdown-menu">
@@ -222,43 +219,43 @@
   </div>
 
   <!-- JS -->
-<script>
-document.getElementById('login-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorMsg = document.getElementById('errorMsg');
 
-  try {
-    const response = await fetch('https://doctor-backend-1hbs.onrender.com/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
+      try {
+        const response = await fetch('https://doctor-backend-1hbs.onrender.com/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        if (!response.ok) {
+          const text = await response.text();
+          throw new Error(`Error ${response.status}: ${text}`);
+        }
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Login successful!');
+          window.location.href = 'account.html';
+        } else {
+          errorMsg.textContent = data.message || 'Invalid email or password.';
+        }
+
+      } catch (error) {
+        console.error('Login error:', error);
+        errorMsg.textContent = 'Login failed. Please try again later.';
+      }
     });
-
-    if (!response.ok) {
-      const errorText = await response.text();
-      throw new Error(`Server error (${response.status}): ${errorText}`);
-    }
-
-    const data = await response.json();
-
-    if (data.success) {
-      alert('Login successful!');
-      // Redirect to profile or dashboard page
-      window.location.href = 'account.html';
-    } else {
-      alert(data.message || 'Login failed. Please check your credentials.');
-    }
-  } catch (error) {
-    console.error('Login error:', error);
-    alert('Login failed. Please try again later.');
-  }
-});
-</script>
-
+  </script>
 
 </body>
 </html>
