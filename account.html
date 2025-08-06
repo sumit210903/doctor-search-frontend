@@ -256,7 +256,7 @@
 
     async function loadUser() {
       try {
-        const res = await fetch(`http://localhost:3000/api/user/${userId}`);
+        const res = await fetch(`https://doctor-backend-1hbs.onrender.com/api/user/${userId}`);
         const user = await res.json();
 
         document.getElementById('userName').textContent = user.name || 'Not Available';
