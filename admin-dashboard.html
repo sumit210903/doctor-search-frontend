@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard - CareRadar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Font and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+       margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0fdfb;
+    }
+
+    header {
+      background-color:  #00856f;
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: slideIn 0.8s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+
+    .btn-logout {
+      background: #e53935;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn-logout:hover {
+      background: #c62828;
+    }
+
+    .container {
+      padding: 2rem;
+      animation: fadeIn 1s ease;
+    }
+
+    .dashboard-box {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+    }
+
+    th {
+      background: #f0f0f0;
+    }
+
+    .btn-export {
+      margin-top: 15px;
+      background: #00856f;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-export:hover {
+      background: #2e7d32;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media screen and (max-width: 768px) {
+      table {
+        font-size: 14px;
+      }
+
+      header h1 {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><i class="fas fa-user-shield"></i> Admin Dashboard - CareRadar</h1>
+    <button class="btn-logout" onclick="logout()">Logout</button>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-box">
+      <h2>All Appointments</h2>
+      <table id="appointmentTable">
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Email</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Appointments will be injected here by JS -->
+        </tbody>
+      </table>
+      <button class="btn-export" onclick="exportAppointments()">Export to Excel</button>
+    </div>
+  </div>
+
+  <script>
+    // Load appointments from backend API
+    window.onload = () => {
+      fetch('https://doctor-backend-1hbs.onrender.com/api/admin-dashboard') // Replace with real backend URL
+        .then(res => res.json())
+        .then(data => {
+          const table = document.getElementById('appointmentTable').querySelector('tbody');
+          data.forEach(appointment => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+              <td>${appointment.name}</td>
+              <td>${appointment.email}</td>
+              <td>${appointment.doctor}</td>
+              <td>${appointment.date}</td>
+              <td>${appointment.time}</td>
+            `;
+            table.appendChild(row);
+          });
+        })
+        .catch(err => {
+          console.error('Error loading appointments:', err);
+        });
+    };
+
+    function logout() {
+      window.location.href = "login.html"; // Redirect to login or homepage
+    }
+
+    function exportAppointments() {
+      window.location.href = "http://yourbackend.com/api/export-excel"; // Adjust endpoint
+    }
+  </script>
+
+</body>
+</html>

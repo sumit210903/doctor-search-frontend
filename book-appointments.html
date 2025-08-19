@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Book Appointment | CareRadar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5fffd;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+.navbar {
+      background-color: #00856F;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: translateX(5px);
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #ffffff;
+      position: absolute;
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      max-height: 300px;
+      opacity: 1;
+ }
+
+    .dropdown-menu li a {
+      color: black;
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #eee;
+    }
+
+    /* Form Container */
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,133,111,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00856f;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+    }
+
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    form button {
+      background-color: #00856f;
+      color: white;
+      padding: 14px 20px;
+      border: none;
+      font-size: 17px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    form button:hover {
+      background-color: #006c59;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .navbar a{
+text-decoration: none;
+    }
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+
+      .navbar .logo {
+        margin-bottom: 10px;
+      }
+
+      .navbar-links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      form input, form select, form textarea {
+        font-size: 15px;
+        padding: 10px;
+      }
+
+      form button {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      .navbar a {
+        font-size: 15px;
+      }
+
+      form input, form select, form textarea {
+        font-size: 14px;
+        padding: 9px;
+      }
+
+      form button {
+        font-size: 15px;
+        padding: 12px;
+      }
+    
+    }
+  </style>
+</head>
+<body>
+
+ 
+<nav class="navbar">
+  <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a>
+  <ul class="nav-links">
+
+    <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+    <li class="dropdown">
+      <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+        <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+        <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+        <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+        <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+        <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+        <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+        <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+      <ul class="dropdown-menu">
+        <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+        <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+  <!-- ✅ Appointment Form -->
+  <div class="container">
+    <h2><i class="fa-solid fa-calendar-check"></i> Book an Appointment</h2>
+
+    <form id="appointmentForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" required />
+
+      <label for="doctor">Select Doctor</label>
+      <select id="doctor" name="doctor" required>
+        <option value="">-- Select a Doctor --</option>
+        <option value="Dr. Mehta">Dr. Mehta - Cardiologist</option>
+        <option value="Dr. Patel">Dr. Patel - Dermatologist</option>
+        <option value="Dr. Verma">Dr. Verma - Orthopedic</option>
+      </select>
+
+      <label for="date">Preferred Date</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="message">Message (optional)</label>
+      <textarea id="message" name="message" rows="4"></textarea>
+
+      <button type="submit">Book Now</button>
+      <div class="success-message" id="successMessage">✅ Appointment Booked Successfully!</div>
+    </form>
+  </div>
+
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const userId = localStorage.getItem("userId");
+  const doctorId = document.getElementById("doctor").value;
+  const date = document.getElementById("date").value;
+
+  if (!userId) {
+    alert("Please log in to book an appointment.");
+    return;
+  }
+
+  const response = await fetch("https://doctor-backend-1hbs.onrender.com/api/appointments", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, doctorId, date }),
+  });
+
+  const result = await response.json();
+  if (response.ok) {
+    alert("Appointment successful!");
+    window.location.href = "thankyou.html";
+  } else {
+    alert(result.message || "Appointment failed");
+  }
+});
+</script>
+
+
+</body>
+</html>

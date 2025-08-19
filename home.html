@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home - CareRadar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6f9fa;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: #00856F;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar a {
+      text-decoration: none;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: translateX(5px);
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #ffffff;
+      position: absolute;
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .dropdown-menu li a {
+      color: black;
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #eee;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1588776814546-ec7f29fddda5?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 6em 2em;
+      text-align: center;
+    }
+
+    .hero-content {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 2em;
+      display: inline-block;
+      border-radius: 10px;
+    }
+
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.75em 1.5em;
+      background-color: #00856F;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      padding: 3em 2em;
+      background-color: #fff;
+      flex-wrap: wrap;
+    }
+
+    .feature {
+      text-align: center;
+      max-width: 250px;
+      margin: 1em;
+    }
+
+    .feature i {
+      font-size: 2em;
+      color: #00856F;
+      margin-bottom: 0.5em;
+    }
+
+    .feature h3 {
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5em;
+      background-color: #00856F;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html">
+      <div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div>
+    </a>
+    <ul class="nav-links">
+
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+          <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+          <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+          <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+          <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+          <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Find the Best Doctors Near You</h1>
+      <p>Book appointments online and access top-rated healthcare professionals from the comfort of your home.</p>
+      <a href="search-doctors.html" class="hero-btn">Search Doctors</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <i class="fas fa-user-md"></i>
+      <h3>Verified Doctors</h3>
+      <p>Consult with certified, experienced, and reviewed doctors.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-calendar-check"></i>
+      <h3>Easy Booking</h3>
+      <p>Schedule appointments instantly with just a few clicks.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-laptop-medical"></i>
+      <h3>Online Consultation</h3>
+      <p>Get medical advice anytime, anywhere via secure video calls.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CareRadar. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>

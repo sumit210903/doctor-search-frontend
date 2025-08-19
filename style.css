@@ -1,0 +1,160 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+ .navbar {
+      background-color: rgba(0, 133, 111, 1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: translateX(5px);
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  transform: translateX(5px);
+}
+
+
+   .dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #ffffff;
+  position: absolute;
+  display: block;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  max-height: 300px; /* Enough to show all list items */
+  opacity: 1;
+}
+
+
+    .dropdown-menu li a {
+      color: black;
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #eee;
+    }
+.navbar a{
+  text-decoration: none; 
+  color: white;
+}
+
+.hero {
+  background: #e0f5f3;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #00856F;
+}
+
+.search-bar {
+  margin-top: 20px;
+}
+
+.search-bar input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-bar button {
+  padding: 10px 20px;
+  background: #00856F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.doctors {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.doctor-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  width: 220px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 50%;
+  height: 120px;
+  object-fit: cover;
+}
+
+footer {
+  background: #00856F;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}

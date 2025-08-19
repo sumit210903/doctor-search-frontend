@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Top Rated Doctors - CareRadar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f6f9fa;
+      color: #333;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #00856F;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      margin: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: translateX(5px);
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #ffffff;
+      position: absolute;
+      display: block;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .dropdown-menu li a {
+      color: black;
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #eee;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      background: white;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #00856F;
+      font-size: 2em;
+      margin-bottom: 1rem;
+    }
+
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .doctor-card {
+      background: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .doctor-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .doctor-card h3 {
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .doctor-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5em;
+      background-color: #00856F;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html"><div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div></a> 
+    <ul class="nav-links">
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+          <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+          <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+          <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+          <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+          <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+          <li><a href="my-account.html"><i class="fas fa-user"></i> My Account</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="section">
+    <h2>Top Rated Doctors</h2>
+    <div class="doctors-grid">
+      <div class="doctor-card">
+        <h3>Dr. Aditi Sharma</h3>
+        <p>Cardiologist - 15 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="doctor-card">
+        <h3>Dr. Rahul Mehta</h3>
+        <p>Orthopedic - 10 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐☆</p>
+      </div>
+      <div class="doctor-card">
+        <h3>Dr. Neha Kapoor</h3>
+        <p>Dermatologist - 8 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="doctor-card">
+        <h3>Dr. Seemav Pandey</h3>
+        <p>ENT - 5 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="doctor-card">
+        <h3>Dr. Raj Dubey</h3>
+        <p>Pediatrist - 20 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="doctor-card">
+        <h3>Dr. Suman Sinha</h3>
+        <p>Eye Specialist - 12 yrs exp</p>
+        <p>Rating: ⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CareRadar. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

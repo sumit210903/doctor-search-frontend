@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search Doctors - CareRadar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #00856F;
+      --text-color: #333;
+      --bg-color: #f6f9fa;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .navbar {
+      background-color: var(--primary-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .navbar a {
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      transform: translateX(5px);
+    }
+
+    .dropdown-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      background-color: #ffffff;
+      position: absolute;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      max-height: 300px;
+      opacity: 1;
+    }
+
+    .dropdown-menu li a {
+      color: black;
+      display: block;
+      padding: 0.5rem 1rem;
+    }
+
+    .dropdown-menu li a:hover {
+      background: #eee;
+    }
+
+    .section {
+      padding: 3rem 2rem;
+      background: white;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: var(--primary-color);
+      font-size: 2em;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-box {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid var(--primary-color);
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid #ccc;
+      border-top: none;
+      z-index: 999;
+      border-radius: 0 0 8px 8px;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+    }
+
+    .suggestions li {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .suggestions li:hover {
+      background-color: #eee;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5em;
+      background-color: var(--primary-color);
+      color: white;
+      margin-top: 380px;
+
+    }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.5em;
+      }
+
+      .search-box {
+        width: 100%;
+        padding: 0 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html">
+      <div class="logo"><i class="fas fa-heartbeat"></i> CareRadar</div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="home.html"><i class="fas fa-home"></i> Home</a></li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-md"></i> Doctors ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="search-doctors.html"><i class="fas fa-search"></i> Search Doctors</a></li>
+          <li><a href="book-appointments.html"><i class="fas fa-calendar-plus"></i> Book Appointment</a></li>
+          <li><a href="top-rated.html"><i class="fas fa-star"></i> Top Rated</a></li>
+          <li><a href="specialites.html"><i class="fas fa-stethoscope"></i> Specialties</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-briefcase-medical"></i> Services ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="online-consultation.html"><i class="fas fa-video"></i> Online Consultation</a></li>
+          <li><a href="in-person-visit.html"><i class="fas fa-hospital-user"></i> In-person Visit</a></li>
+          <li><a href="second-opinion.html"><i class="fas fa-user-check"></i> Second Opinion</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-book-medical"></i> Resources ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
+          <li><a href="FAQs.html"><i class="fas fa-question-circle"></i> FAQs</a></li>
+          <li><a href="Covid19.html"><i class="fas fa-virus"></i> COVID-19 Info</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+          <li><a href="login.html"><i class="fas fa-user-lock"></i> Log In</a></li>
+          <li><a href="my-account.html"><i class="fas fa-user"></i> My Account</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <section class="section">
+    <h2>Find the Right Doctor</h2>
+
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search by name, specialty, or city..."
+        onkeyup="showSuggestions()" autocomplete="off" />
+      <ul id="suggestionList" class="suggestions"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 CareRadar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const doctors = [
+      "Dr. Aditi Sharma - Cardiologist - Delhi",
+      "Dr. Rahul Mehta - Orthopedic - Mumbai",
+      "Dr. Neha Kapoor - Dermatologist - Bangalore",
+      "Dr. Anil Gupta - Neurologist - Pune",
+      "Dr. Priya Sinha -  Pediatrician - Kolkata",
+      "Dr. Rakesh Yadav - Dentist - Chennai"
+    ];
+
+    function showSuggestions() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const list = document.getElementById("suggestionList");
+      list.innerHTML = '';
+
+      if (input.length === 0) {
+        list.style.display = "none";
+        return;
+      }
+
+      const matches = doctors.filter(doctor => doctor.toLowerCase().includes(input));
+
+      if (matches.length === 0) {
+        list.style.display = "none";
+        return;
+      }
+
+      matches.forEach(name => {
+        const li = document.createElement("li");
+        li.textContent = name;
+        li.onclick = () => {
+          document.getElementById("searchInput").value = name;
+          list.style.display = "none";
+        };
+        list.appendChild(li);
+      });
+
+      list.style.display = "block";
+    }
+  </script>
+
+</body>
+
+</html>
