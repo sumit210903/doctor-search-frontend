@@ -177,6 +177,9 @@
         grid-template-columns: 1fr;
       }
     }
+    .navbar a {
+      text-decoration: none;
+    }
   </style>
 </head>
 
@@ -209,9 +212,9 @@
       <li class="dropdown">
         <a href="#"><i class="fas fa-user-circle"></i> Account ▾</a>
         <ul class="dropdown-menu">
-          <li><a href="my-account.html">My Profile</a></li>
+          <li><a href= "my-profile.html">My Profile</a></li>
           <li><a href="my-appointments.html">My Appointments</a></li>
-          <li><a href="logout.html">Logout</a></li>
+          <li><a href="login.html">Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -222,137 +225,30 @@
     <h2>My Profile</h2>
     <div class="profile-grid">
       <label for="name">Full Name</label>
-      <input type="text" id="name" value="Sumit Singh" disabled />
+      <input type="text" id="name" value="Sumit Singh Kushwaha" disabled />
 
       <label for="email">Email</label>
-      <input type="email" id="email" value="sumit@example.com" disabled />
+      <input type="email" id="email" value="sume0358@gmail.com" disabled />
 
       <label for="phone">Phone</label>
-      <input type="text" id="phone" value="+91 9876543210" disabled />
+      <input type="text" id="phone" value="+91 7974756267" disabled />
 
       <label for="age">Age</label>
-      <input type="number" id="age" value="23" disabled />
+      <input type="number" id="age" value="" disabled />
 
       <label for="gender">Gender</label>
-      <input type="text" id="gender" value="Male" disabled />
+      <input type="text" id="gender" value="" disabled />
     </div>
 
     <button class="edit-btn" onclick="redirectToEdit()">Edit Profile</button>
   </div>
 
-  <!-- JS -->
-  <!DOCTYPE html>
-  <html lang="en">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Profile</title>
-    <style>
-      /* Add your CSS styling here */
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-        margin: 0;
-        padding: 0;
-      }
-
-      nav {
-        background-color: #006c59;
-        padding: 1rem;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .navbar a {
-        text-decoration: none;
-      }
-
-      .container {
-        max-width: 600px;
-        margin: 2rem auto;
-        background: white;
-        padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .profile-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-
-      input {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-      }
-
-      .edit-btn {
-        background-color: #006c59;
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 1rem;
-      }
-
-      .edit-btn:hover {
-        background-color: #004d40;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <!-- Navbar -->
-    <nav>
-      <div><strong>CareRadar</strong></div>
-      <div>
-        <a href="index.html" style="color: white; text-decoration: none; margin-right: 1rem;">Home</a>
-        <a href="logout.html" style="color: white; text-decoration: none;">Logout</a>
-      </div>
-    </nav>
-
-    <!-- Profile Content -->
-    <div class="container">
-      <h2>My Profile</h2>
-      <div class="profile-grid">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" value="Sumit Singh" disabled />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" value="sumit@example.com" disabled />
-
-        <label for="phone">Phone</label>
-        <input type="text" id="phone" value="+91 9876543210" disabled />
-
-        <label for="age">Age</label>
-        <input type="number" id="age" value="23" disabled />
-
-        <label for="gender">Gender</label>
-        <input type="text" id="gender" value="Male" disabled />
-      </div>
-
-      <!-- Button that redirects -->
-      <button class="edit-btn" onclick="redirectToEdit()">Edit Profile</button>
-    </div>
-
-    <!-- ✅ JS FUNCTION: Place here before closing body -->
-    <script>
+ <script>
       function redirectToEdit() {
         window.location.href = 'edit-profile.html';
       }
     </script>
 
-  </body>
-
-  </html>
 
 
 </body>

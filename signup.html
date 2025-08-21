@@ -229,7 +229,7 @@
       <label for="confirm">Confirm Password</label>
       <input type="password" id="confirm" required />
 
-      <button type="submit">Register</button>
+      <button onclick="redirecttoPage()" type="submit">Register</button>
       <p class="error" id="errorMsg"></p>
     </form>
   </div>
@@ -274,9 +274,13 @@
 
       const result = await response.json();
 
+    function redirectToPage() {
+      window.location.href = "my-profile"; // Replace with your target URL
+    }
+
       if (response.ok) {
         alert("Registration successful!");
-        window.location.href = "login.html";
+        window.location.href = "my-profile.html";
       } else {
         // Handle specific backend error messages
         errorMsg.textContent = result.message || "Registration failed. Please try again.";
